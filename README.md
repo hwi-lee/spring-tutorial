@@ -8,22 +8,22 @@ IoC와 DI는 객체를 개발자가 직접 만들지 않고, Spring이 대신 �
 
 AOP는 로그, 트랜잭션 같은 공통 기능을 핵심 로직에서 분리해주는 기술입니다. @Aspect와 @Before 같은 어노테이션을 통해 메서드 실행 전후에 특정 로직을 삽입할 수 있습니다.
 
-**PSA(Portable Service Abstraction)**는 데이터베이스, 트랜잭션 같은 기술을 Spring이 추상화해서, 어떤 라이브러리를 쓰든 동일한 방식으로 사용할 수 있게 해줍니다. 예를 들어 JdbcTemplate을 사용하면 DB 종류에 관계없이 동일한 방식으로 코드를 짤 수 있어요.
+**PSA(Portable Service Abstraction)**는 데이터베이스, 트랜잭션 같은 기술을 Spring이 추상화해서, 어떤 라이브러리를 쓰든 동일한 방식으로 사용할 수 있게 해줍니다. 예를 들어 JdbcTemplate을 사용하면 DB 종류에 관계없이 동일한 방식으로 코드를 짤 수 있습니다.
 
 # Spring Bean과 생명주기
 Spring Bean은 Spring 컨테이너가 생성하고 관리하는 객체를 말합니다. Bean은 보통 @Component, @Service, @Repository 등 어노테이션으로 등록됩니다.
 
 Bean의 생명주기는 다음과 같습니다.
 
-객체 생성
+1. 객체 생성
 
-의존성 주입
+2. 의존성 주입
 
-초기화 (@PostConstruct 사용 가능)
+3. 초기화 (@PostConstruct 사용 가능)
 
-사용
+4. 사용
 
-소멸 (@PreDestroy 사용 가능)
+5. 소멸 (@PreDestroy 사용 가능)
 
 이 과정을 통해 객체가 안전하게 생성되고, 필요한 자원을 해제하는 것도 자동화할 수 있습니다.
 
